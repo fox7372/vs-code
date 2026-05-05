@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Compiled C/C++
+*.o
+*.obj
+*.out
+*.exe
+*.a
+*.so
+*.dylib
+*.d
+
+# Compiled binaries (no extension)
+algorithm/TREE/heqp
+algorithm/TREE/tree
+algorithm/bucket
+algorithm/fast_order
+algorithm/test_fast_sort
+class/week1/malloc
+class/week4/chain
+class/week4/copy
+class/week4/t
+class/week7/cla
+class/week7/stak
+class/week8/rooted_tree
+class/week9/homework
+class/week9/print_tree
+h/stdlib/abs
+h/time/time
+proc_dump/proc_dump
+snack/snake
+snack/while
+
+# VS Code (keep settings but ignore local overrides)
+.vscode/settings.local.json
+
+# OS images
+*.rv32i-bin
+
+# Temp files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

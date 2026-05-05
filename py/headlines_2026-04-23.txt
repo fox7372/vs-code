@@ -1,0 +1,115 @@
+
+============================================================
+  📰 今日头条新闻 — 2026-04-23
+============================================================
+
+   1. [07:37] 中东的两次停火加剧了紧张局势。而且，海军部长罢免了
+      来源: NPR 新闻 (头条)
+      ttps://www.npr.org/2026h/04/23/g-s1-118440/up-first-newsletter-us-iran-john-phelan-trump-republican-democrat-midterm-fundraising-budget-reconciliation-ice
+
+   2. [07:30] 美国扣押了另一艘油轮，因为与伊朗的和平谈判仍然悬而未决
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/23/nx-s1-5796719/iran-middle-east-updates
+
+   3. [06:51] 关于美国抗击艾滋病毒努力的期待已久的数据的两种惊人的不同观点
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/23/g-s1-118221/hiv-aids-pepfar-trump-foreign-aid
+
+   4. [06:00] Sycophantic AI奉承并暗示您不应该受到责备
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/23/nx-s1-5792867/ai-chatbot-flattery-mental-health-risks
+
+   5. [05:00] TikTok如何将美国外籍人士带到东南亚
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/23/nx-s1-5763809/tiktok-moving-vietnam-thailand-american-expats
+
+   6. [05:00] 民主党人主导中期筹款，但共和党人拥有巨大的现金优势
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/23/nx-s1-5795841/democrats-senate-fundraising-republican-maga-cash-on-hand-campaign-finance
+
+   7. [05:00] 参议院共和党正在启动预算调节以资助ICE。以下是具体操作方法
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/23/g-s1-118330/congress-dhs-spending-reconciliation
+
+   8. [05:00] 世界新闻摄影公布2026年度照片
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/sections/the-picture-show/2026/04/23/nx-s1-5793922/world-press-photo-announces-photo-of-the-year-2026
+
+   9. [02:19] 特朗普政府在监护权斗争中从古巴飞回10岁
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/23/g-s1-118427/trump-administration-child-cuba
+
+  10. [08:26] 伊朗现场更新：伊朗官员称，第一霍尔木兹海峡收费收入已存入银行
+      来源: ABC 新闻 (头条)
+      https://abcnews.com/International/live-updates/iran-live-updates-marines-uss-tripoli-seized-iranian/?id=132196152
+
+  11. [08:43] 国家许可的医用大麻被重新归类为危险性较低的药物
+      来源: ABC 新闻 (头条)
+      https://abcnews.com/Health/acting-ag-todd-blanche-signs-order-reclassifying-state/story?id=132308701
+
+  12. [07:22] SNAP福利不为烤鸡支付费用。两党法案可能会改变这一点，
+      来源: ABC 新闻 (头条)
+      https://abcnews.com/US/wireStory/snap-benefits-pay-rotisserie-chicken-bipartisan-bill-change-132305218
+
+  13. [08:39] 观看：大胆营救2个被困在悬崖上的家庭
+      来源: ABC 新闻 (头条)
+      https://abcnews.com/video/132306555/
+
+  14. [08:09] 观看： “GMA”的孩子们接管了工作室
+      来源: ABC 新闻 (头条)
+      https://abcnews.com/video/132306770/
+
+  15. [07:40] 观看：动物园在儿童医院的24/7频道流
+      来源: ABC 新闻 (头条)
+      https://abcnews.com/video/132304045/
+
+  16. [07:05] 观看：时代广场正在搜寻警方称被遗弃婴儿的男子
+      来源: ABC 新闻 (头条)
+      https://abcnews.com/video/132294777/
+
+  17. [12:12] 监控供应商被发现滥用电信公司的访问权限来跟踪人们的位置
+      来源: 黑客新闻
+      https://techcrunch.com/2026/04/23/surveillance-vendors-caught-abusing-access-to-telcos-to-track-peoples-phone-locations-researchers-say/
+
+  18. [12:02] Jiga (YC W21)正在招聘
+      来源: 黑客新闻
+      https://jiga.io/about-us/
+
+  19. [11:53] 显示HN ： Honker – Postgres通知/监听SQLite的语义
+      来源: 黑客新闻
+      https://github.com/russellromney/honker
+
+  20. [11:50] 在对博客帖子的会话回复中出现卑鄙的垃圾邮件
+      来源: 黑客新闻
+      https://shkspr.mobi/blog/2026/04/sneaky-spam-in-conversational-replies-to-blog-posts/
+
+  21. [10:14] Show HN ：构建了一个日常游戏，您可以在其中按时间顺序对历史事件进行排序
+      来源: 黑客新闻
+      https://hisorty.app/
+
+  22. [09:20] 用Zig编写C编译器
+      来源: 黑客新闻
+      https://ar-ms.me/thoughts/c-compiler-1-zig/
+
+  23. [08:10] 电子邮件本可以改善X.400倍
+      来源: 黑客新闻
+      https://buttondown.com/blog/x400-vs-smtp-email
+
+  24. [05:14] 我们的新闻编辑室AI政策
+      来源: 黑客新闻
+      https://arstechnica.com/staff/2026/04/our-newsroom-ai-policy/
+
+  25. [04:44] 我正在构建云
+      来源: 黑客新闻
+      https://crawshaw.io/blog/building-a-cloud
+
+  26. [01:59] Arch Linux现在具有位对位可复制的Docker镜像
+      来源: 黑客新闻
+      https://antiz.fr/blog/archlinux-now-has-a-reproducible-docker-image/
+
+  27. [01:02] 《暴风雨》与《暴风雨》：雅达利标志性电子游戏的制作和改造
+      来源: 黑客新闻
+      https://tempest.homemade.systems
+
+============================================================
+  共 27 条新闻

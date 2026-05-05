@@ -1,0 +1,87 @@
+
+============================================================
+  📰 今日头条新闻 — 2026-04-25
+============================================================
+
+   1. [08:00] 意见：波士顿马拉松赛人道课
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/25/nx-s1-5790431/opinion-a-lesson-in-humanity-at-the-boston-marathon
+
+   2. [06:00] 司法部可以更轻松地驱逐具有DACA身份的人
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/25/nx-s1-5798943/justice-department-makes-it-easier-to-deport-those-with-daca-status
+
+   3. [05:00] 化肥和燃料价格的上涨正在将一些农民推向边缘
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/25/nx-s1-5795674/farmers-tariffs-iran-trump-mississippi
+
+   4. [05:00] 司法部希望保护其律师免受外部审查。批评者担心监督
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/25/g-s1-118356/justice-department-ethics-rules-state-bar
+
+   5. [05:00] 一些计划生育诊所正在使用肉毒杆菌毒素来缓解联邦政府的削减
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/25/nx-s1-5763797/planned-parenthood-botox-medcaid-trump-congress
+
+   6. [02:35] 伊朗外长等待美国代表团前往巴基斯坦进行和平谈判
+      来源: NPR 新闻 (头条)
+      https://www.npr.org/2026/04/25/nx-s1-5799372/iran-middle-east-updates
+
+   7. [06:57] 伊朗现场更新：维特科夫、库什纳将于周六前往伊斯兰堡参加和平谈判
+      来源: ABC 新闻 (头条)
+      https://abcnews.com/International/live-updates/iran-live-updates-marines-uss-tripoli-seized-iranian/?id=132196152
+
+   8. [10:29] 一名失踪的博士生被发现死亡，另一名仍下落不明：警长
+      来源: ABC 新闻 (头条)
+      https://abcnews.com/US/missing-usf-students-deemed-endangered-officials-search-continues/story?id=132349006
+
+   9. [11:16] AI的Lambda微积分基准
+      来源: 黑客新闻
+      https://victortaelin.github.io/lambench/
+
+  10. [11:03] 只有一方才是MS-DOS的真正继承者– Windows 2.x
+      来源: 黑客新闻
+      https://blisscast.wordpress.com/2026/04/21/windows-2-gui-wonderland-12a/
+
+  11. [10:59] 使用Go WebAssembly和grdp构建的基于Web的RDP客户端
+      来源: 黑客新闻
+      https://github.com/nakagami/grdpwasm
+
+  12. [10:46] 马丁·戈尔韦（ Martin Galway ）的1980年代Commodore 64游戏的音乐源文件
+      来源: 黑客新闻
+      https://github.com/MartinGalway/C64_music
+
+  13. [08:53] Show HN ：您的代理维护的Karpathy式LLM wiki （ Markdown和Git ）
+      来源: 黑客新闻
+      https://github.com/nex-crm/wuphf
+
+  14. [05:56] 新的10 GbE USB适配器更酷、更小、更便宜
+      来源: 黑客新闻
+      https://www.jeffgeerling.com/blog/2026/new-10-gbe-usb-adapters-cooler-smaller-cheaper/
+
+  15. [04:18] Turbo Vision 2.0 –一个现代化的端口
+      来源: 黑客新闻
+      https://github.com/magiblot/tvision
+
+  16. [01:24] 开源内存层，因此任何AI代理都可以做Claude.ai和ChatGPT所做的事情
+      来源: 黑客新闻
+      https://alash3al.github.io/stash?_v01
+
+  17. [01:08] 几何节点的宇宙学
+      来源: 黑客新闻
+      https://www.blender.org/user-stories/cosmology-with-geometry-nodes/
+
+  18. [01:03] 纯文本已经存在了几十年，它将继续存在
+      来源: 黑客新闻
+      https://unsung.aresluna.org/plain-text-has-been-around-for-decades-and-its-here-to-stay/
+
+  19. [00:58] 将IBM Quantum后端替换为/dev/urandom
+      来源: 黑客新闻
+      https://github.com/yuvadm/quantumslop/blob/25ad2e76ae58baa96f6219742459407db9dd17f5/URANDOM_DEMO.md
+
+  20. [00:11] 教育必须超越单纯的文字生产
+      来源: 黑客新闻
+      https://www.ncregister.com/commentaries/schnell-repairing-the-ruins
+
+============================================================
+  共 20 条新闻
