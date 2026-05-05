@@ -19,4 +19,5 @@
 # 重新忽略本地设置（上面 ! 规则放行了 .vscode/ 和 *.json，但这两个不要）
 .vscode/settings.local.json
 .claude/
+.venv/
 **/settings.local.json
