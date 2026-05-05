@@ -1,50 +1,22 @@
-# Python
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-env/
+# ========== 白名单模式：默认忽略所有，只放行需要的 ==========
+*
 
-# Compiled C/C++
-*.o
-*.obj
-*.out
-*.exe
-*.a
-*.so
-*.dylib
-*.d
+# 允许进入子目录（否则 git 不会遍历）
+!*/
 
-# Compiled binaries (no extension)
-algorithm/TREE/heqp
-algorithm/TREE/tree
-algorithm/bucket
-algorithm/fast_order
-algorithm/test_fast_sort
-class/week1/malloc
-class/week4/chain
-class/week4/copy
-class/week4/t
-class/week7/cla
-class/week7/stak
-class/week8/rooted_tree
-class/week9/homework
-class/week9/print_tree
-h/stdlib/abs
-h/time/time
-proc_dump/proc_dump
-snack/snake
-snack/while
+# ========== C/C++ 源文件 ==========
+!*.c
+!*.h
+!*.s
 
-# VS Code (keep settings but ignore local overrides)
+# ========== 配置文件 ==========
+!.gitignore
+!.vscode/
+!*.json
+!Makefile
+!*.lds
+
+# 重新忽略本地设置（上面 ! 规则放行了 .vscode/ 和 *.json，但这两个不要）
 .vscode/settings.local.json
-
-# OS images
-*.rv32i-bin
-
-# Temp files
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
+.claude/
+**/settings.local.json
