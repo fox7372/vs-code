@@ -186,7 +186,7 @@ void print_vertical(tree_n* root) {
 
 /* ========== 主函数 ========== */
 int main() {
-    int arr[] = {31, 45, 14, 52, 42, 6, 21, 73, 47, 26, 37, 33, 8};
+    int arr[] = {31, 45, 36,14, 52, 42, 6, 21, 73, 47, 26, 37, 33, 8};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     tree_n* root = creat_tnode(arr[0]);

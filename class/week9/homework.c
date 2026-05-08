@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<assert.h>
 typedef struct tree_n
 {
 	int data,high;
@@ -18,10 +19,7 @@ typedef struct node
 node* creatnode(tree_n*p)
 {
 	node* newnode = (node*)malloc(sizeof(node));
-	if (newnode == NULL) {
-		printf("内存分配失败！\n");
-		exit(1);
-	}
+    assert(newnode!=NULL);
 	newnode->next = NULL;
 	newnode->p = p;
 	return newnode;
@@ -31,11 +29,7 @@ node* creatnode(tree_n*p)
 tree_n* creat_tnode(int data,int high,tree_n*parent)
 {
 	tree_n* node = (tree_n*)malloc(sizeof(tree_n));
-	if (node == NULL) 
-	{
-		printf("二叉树节点内存分配失败！\n");
-		exit(1);
-	}
+    assert(node!=NULL);
     node->high=high;
     node->parent=parent;
 	node->data = data;
@@ -161,7 +155,7 @@ int main()
 {
     int arr[13]={31,45,14,52,42,6,21,73,47,26,37,33,8};
     tree_n*root=creat_tnode(arr[0],1,NULL);
-    for(int i=1;i<13;i++)
+    for(int i=0;i<13;i++)
     {
         insert_tree(arr[i],root);
     }
