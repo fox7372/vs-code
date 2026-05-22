@@ -15,7 +15,6 @@ void* philosopher(void* arg) {
 
     while (1) 
     {
-
         printf("[Think] Philosopher %d is thinking.\n", id);
         pthread_mutex_lock(&permit_mutex);
         while (cf[left]==0||cf[right]==0) 

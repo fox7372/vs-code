@@ -38,34 +38,34 @@ void add_bucket(int i)
 	{
         node*temp=arr[t];
 		node*j=NULL;
-		while(temp!=NULL)
+		while(temp->next!=NULL)
 		{
-            j=temp;
-			temp=temp->next; 
-			if(temp==NULL)
+			if(i<=temp->data)
 			{
-				j->next=g;
-			    break;
-			}
-			else
-			{
-				if(i<=temp->data)
+				if(j==NULL)
 				{
-					j->next=g;
-				    g->next=temp;
-					break;
+					arr[t]=g;
+					g->next=temp;      
 				}
-                
+				else
+				{
+                    j->next=g;
+			        g->next=temp;
+				}
+				return ;
 			}
-			
+            j=temp;
+			temp=temp->next;	
 		} 
+		temp->next=g;
 	}
 }
 
 void output()
 {
+
 	node*index=NULL;
-	for(int i=9;i>=0;i--)
+	for(int i=0;i<=9;i++)
 	{
 		index=arr[i];
 		while(index!=NULL)
@@ -91,5 +91,6 @@ void main()
 		add_bucket(ptr[i]);
 	}
 	output();
+	printf("\n");
     free(ptr);    
 }

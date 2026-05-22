@@ -2,7 +2,21 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch Active File",
+            "name": "GDB: 计时调试",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/liu/vs code/gdb-test/hello",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "/home/liu/vs code/gdb-test",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/tmp/gdb",
+            "setupCommands": []
+        },
+        {
+            "name": "GDB: 调试当前 C 程序",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -12,20 +26,58 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "logging": {
+                "engineLogging": true,
+                "trace": true,
+                "traceResponse": true
+            },
             "setupCommands": [
                 {
-                    "description": "Enable pretty-printing for gdb",
+                    "description": "启用 gdb 整齐打印",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Set Disassembly Flavor to Intel",
+                    "description": "设置反汇编风格为 Intel",
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: gcc-13 build active file",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "preLaunchTask": "make: 构建当前目录"
+        },
+        {
+            "name": "Python: 调试当前文件",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args": [],
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}"
+        },
+        {
+            "name": "(gdb) 启动",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "输入程序名称，例如 ${workspaceFolder}/a.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }
