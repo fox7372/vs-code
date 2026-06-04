@@ -1,9 +1,12 @@
-int conductor_beat = 0;
+// main.c — 管弦乐队：指挥 + 乐手，通过节拍同步合奏 Canon in D
 
-void wait_for_beat(int current_beat);
-void release_beat();
+int conductor_beat = 0;   // 全局节拍计数，由指挥推进，乐手读取
+
+void wait_for_beat(int current_beat);   // 乐手等待节拍（实现在 orchestra.c 或 orchestra-cv.c）
+void release_beat();                      // 指挥释放节拍
 
 // This is ABC notation;
+// Canon in D 的四声部乐谱，每个声部 8 个音符
 const char *Canon_in_D[4][8] = {
     {"D4", "A3", "B3", "F#3", "G3", "D3", "G3", "A3"},
 
@@ -13,13 +16,15 @@ const char *Canon_in_D[4][8] = {
     {"D3", "A2", "B2", "F#2", "G2", "D2", "G2", "A2"},
 };
 
+// 乐手线程：按乐谱逐一演奏音符
 void T_player(int id) {
     for (int i = 0; i < LENGTH(Canon_in_D[0]); i++) {
-        wait_for_beat(i);
-        const char *note = Canon_in_D[id - 1][i];
+        wait_for_beat(i);                     // 等指挥打到第 i 拍
+        const char *note = Canon_in_D[id - 1][i];  // 取出对应声部的音符
 
         // This is also UNIX philosophy: make everything
         // work together!
+        // 用外部播放器 ffplay 异步播放音符的 wav 文件
         char cmd[128];
         sprintf(cmd,
             "ffplay -nodisp -autoexit"
@@ -29,10 +34,11 @@ void T_player(int id) {
 
         // Should not use "system" like this
         // in production code.
-        system(cmd);
+        system(cmd);   // 调用 shell 命令播放
     }
 }
 
+// 指挥线程：每回车一次释放一个节拍
 void T_conductor() {
     // This conductor is not full synchronized with the players.
     // You may make the system out of sync.
@@ -43,13 +49,14 @@ void T_conductor() {
         if (!fgets(buf, sizeof(buf), stdin)) {
             exit(0);
         }
-        release_beat();
+        release_beat();   // 推进一个节拍
     }
 }
 
 int main() {
+    // 创建 4 个乐手线程（每个声部一个）
     for (int i = 0; i < LENGTH(Canon_in_D); i++) {
         spawn(T_player);
     }
-    spawn(T_conductor);
+    spawn(T_conductor);   // 创建指挥线程
 }

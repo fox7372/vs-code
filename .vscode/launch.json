@@ -56,6 +56,26 @@
             "cwd": "${fileDirname}"
         },
         {
+            "name": "Go: 调试当前文件",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${file}",
+            "args": [],
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}"
+        },
+        {
+            "name": "Go: 调试当前包",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${fileDirname}",
+            "args": [],
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}"
+        },
+        {
             "name": "(gdb) 启动",
             "type": "cppdbg",
             "request": "launch",

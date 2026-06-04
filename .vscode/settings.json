@@ -24,6 +24,25 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": false
   },
+  "go.toolsManagement.autoUpdate": true,
+  "go.useLanguageServer": true,
+  "go.formatTool": "gofumpt",
+  "go.lintTool": "golangci-lint",
+  "go.lintOnSave": "workspace",
+  "go.vetOnSave": "workspace",
+  "go.buildOnSave": "workspace",
+  "[go]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true
+  },
+  "[go.mod]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic",
   "[python]": {
     "editor.tabSize": 4,
     "editor.insertSpaces": true
@@ -31,5 +50,6 @@
   "[makefile]": {
     "editor.tabSize": 4,
     "editor.insertSpaces": false
-  }
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }

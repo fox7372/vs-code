@@ -1,49 +1,60 @@
-
-#include "thread.h"
+#include<thread.h>
+#include<thread-sync.h>
+#include<stdio.h>
+#include<assert.h>
+#include<stdint.h>
 
 #define N 5
 
-int cf[N] = {1,1,1,1,1};
+enum { THINKING, HUNGRY, EATING };
+int state[N];
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_cond_t cond[N];
 
-pthread_mutex_t permit_mutex = PTHREAD_MUTEX_INITIALIZER;
-pthread_cond_t permit_cond = PTHREAD_COND_INITIALIZER;
+static void test(int id) {
+    int left = (id + N - 1) % N;
+    int right = (id + 1) % N;
+    if (state[id] == HUNGRY && state[left] != EATING && state[right] != EATING) {
+        state[id] = EATING;
+        pthread_cond_signal(&cond[id]);
+    }
+}
+
+static void pickup(int id) {
+    mutex_lock(&mutex);
+    state[id] = HUNGRY;
+    test(id);
+    while (state[id] != EATING)
+        pthread_cond_wait(&cond[id], &mutex);
+    mutex_unlock(&mutex);
+}
+
+static void putdown(int id) {
+    mutex_lock(&mutex);
+    state[id] = THINKING;
+    test((id + N - 1) % N);
+    test((id + 1) % N);
+    mutex_unlock(&mutex);
+}
 
 void* philosopher(void* arg) {
-    int id = *(int*)arg;
-    int left = id;
-    int right = (id + 1) % N;
-
-    while (1) 
-    {
+    int id = (int)(intptr_t)arg - 1;
+    while (1) {
         printf("[Think] Philosopher %d is thinking.\n", id);
-        pthread_mutex_lock(&permit_mutex);
-        while (cf[left]==0||cf[right]==0) 
-        {
-            printf("[Wait ] Philosopher %d is waiting for a dining ...\n", id);
-            pthread_cond_wait(&permit_cond, &permit_mutex);
-        }
-        cf[left]=0;
-        cf[right]=0;
-        printf("[Eat ] Philosopher %d is eating with chopsticks %d & %d.\n", id, left, right);
+        pickup(id);
+        printf("[Eat ] Philosopher %d is eating.\n", id);
         printf("[Done] Philosopher %d finished eating.\n", id);
-        cf[left]=1;
-        cf[right]=1;
-        pthread_cond_broadcast(&permit_cond);
-        pthread_mutex_unlock(&permit_mutex);
+        putdown(id);
     }
     return NULL;
 }
 
-int main() {
-    pthread_t threads[N];
-    int ids[N];
+int main() 
+{
     for (int i = 0; i < N; i++)
-    {
-        {
-        ids[i] = i;
-        pthread_create(&threads[i], NULL, philosopher, &ids[i]);
-        }
-        pthread_join(threads[i], NULL);
-    }
+        cond[i] = (pthread_cond_t)PTHREAD_COND_INITIALIZER;
+    for (int i = 0; i < N; i++)
+        spawn(philosopher);
+    join();
     return 0;
 }

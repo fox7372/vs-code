@@ -1,42 +1,53 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<stdio.h>
 #include <stdint.h>
-#define HASH_SIZE 10 
-#define max 3
+
+#define HASH_SIZE 10    // initial bucket count
+#define max 3           // max load factor before enlargement
+
+// supported value types
 enum data_type{EMPTY,INT,FLOAT,CHAR};
-typedef union 
+
+// type-erased value container (tagged by data_type)
+typedef union
 {
 	int i;
 	float f;
 	char* c;
 }data;
 
-typedef struct hash_node 
+// hash node: key-value pair with linked list pointer
+typedef struct hash_node
 {
 	enum data_type type;
 	data value;
-	char* key;
+	char* key;          // NULL means hash by value itself
 	struct hash_node* next;
 } hash_node;
 
-typedef struct 
+// bucket: chain head + size
+typedef struct
 {
-	int size;
+	int size;           // nodes in this chain
 	hash_node* next;
 } chain;
-typedef struct 
+
+// hash table with separate chaining
+typedef struct
 {
-	int size;
-	int  count;
+	int size;           // number of buckets
+	int  count;         // total elements
 	chain** buckets;
 } hash_table;
 
-typedef struct 
+// stack used during rehashing to collect live nodes
+typedef struct
 {
 	hash_node*top;
     int size;
 }stack;
+
+// --- stack helpers (collect live nodes during rehash) ---
 
 stack* create_stack()
 {
@@ -79,10 +90,19 @@ void free_chain(chain* node)
 	free(node);
 }
 
+// --- forward declarations ---
 hash_table* create_hash_table();
 unsigned int hash_function(unsigned int x);
 void hash_table_enlarge(hash_table** table);
 void insert(hash_table** table1, hash_node* value);
+uint64_t hash_float_to_bits(float f);
+unsigned long hash_fnv(const char *str);
+void insert_int(hash_table** table1,char* key,int value);
+void insert_float(hash_table** table1,char* key,float value);
+void insert_char(hash_table** table1,char* key,char* value);
+int search_int(hash_table* table,int value,char* key);
+float search_float(hash_table* table,float value,char* key);
+char* search_char(hash_table* table,char* value,char* key);
 
 
 
@@ -100,7 +120,10 @@ hash_table* create_hash_table()
 	}
 	return table;
 }
-//search from online
+
+// --- hash functions ---
+
+// Robert Jenkins' 32-bit integer hash (good avalanche)
 unsigned int hash_function(unsigned int x)
 {
       x = ~x + (x << 15);
@@ -112,17 +135,19 @@ unsigned int hash_function(unsigned int x)
       return x;
 }
 
-uint64_t hash_float_to_bits(float f) 
+// reinterpret float bits as uint32 for hashing
+uint64_t hash_float_to_bits(float f)
 {
     union { float f; uint32_t bits; } u;
     u.f = f;
     return u.bits;
 }
 
-unsigned long hash_fnv(const char *str) 
+// FNV-1a string hash
+unsigned long hash_fnv(const char *str)
 {
   unsigned long h = 2166136261ul;
-  while (*str) 
+  while (*str)
   {
     h ^= (unsigned char)*str++;
     h *= 16777619ul;
@@ -131,14 +156,16 @@ unsigned long hash_fnv(const char *str)
 }
 
 
+// --- resize: double bucket count and rehash all nodes ---
 void hash_table_enlarge(hash_table** table)
 {
 	hash_table* index=*table;
 	int old_size=index->size;
 	index->size*=2;
 	index->buckets=(chain**)realloc(index->buckets,sizeof(chain*) * index->size);
-	//after realloc the old data is still there but the new part is not initialized 
+	// realloc preserves old data; zero-init the new portion
 	for(int i=old_size;i<index->size;i++)index->buckets[i]=NULL;
+	// push all live nodes onto a stack
 	stack* s=create_stack();
 	for(int i=0;i<(index->size/2);i++)
 	{
@@ -151,12 +178,14 @@ void hash_table_enlarge(hash_table** table)
 			temp=temp2;
 		}
 	}
+	// clear old buckets
 	for(int i=0;i<(index->size/2);i++)
 	{
 		free(index->buckets[i]);
 		index->buckets[i]=NULL;
 	}
 	index->count=0;
+	// rehash every node (insert uses the new size for bucket index)
 	while(s->top!=NULL)
 	{
 		hash_node* temp=pop(&s);
@@ -173,7 +202,7 @@ void hash_table_enlarge(hash_table** table)
 			insert(&index,temp);
 		}
 	}
-	
+
 }
 
 void free_hash_table(hash_table* table)
@@ -184,6 +213,8 @@ void free_hash_table(hash_table* table)
 	}
 	free(table);
 }
+
+// --- typed insert wrappers ---
 
 void insert_int(hash_table** table1,char* key,int value)
 {
@@ -212,6 +243,8 @@ void insert_char(hash_table** table1,char* key,char* value)
 	insert(table1,node);
 }
 
+// --- generic insert ---
+// if key is set, hash by key string; otherwise hash by the value itself
 void insert(hash_table** table1,hash_node* value)
 {
 	hash_table* table = *table1;
@@ -254,6 +287,7 @@ void insert(hash_table** table1,hash_node* value)
 			index=hash_function(i)%table->size;
 		}
 	}
+	// head-insert into the bucket chain
 	if(table->buckets[index] == NULL)
 	{
 		chain* c = (chain*)malloc(sizeof(chain));
@@ -272,6 +306,9 @@ void insert(hash_table** table1,hash_node* value)
 	table->count++;
 }
 
+
+// --- search ---
+// if key is set, look up by key; otherwise by value
 
 int search_int(hash_table* table,int value,char* key)
 {
@@ -367,4 +404,3 @@ int main()
 	printf("%d\n",table->count);
 	return 0;
 }
-

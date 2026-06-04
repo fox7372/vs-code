@@ -1,9 +1,11 @@
+#ifndef HASH_H
+#define HASH_H
+
 #include<stdio.h>
 #include<stdlib.h>
-#include<stdio.h>
 #include <stdint.h>
 #include <string.h>
-#define HASH_SIZE 10 
+#define HASH_SIZE 10
 #define max 3
 enum data_type{EMPTY,INT,FLOAT,CHAR};
 typedef union 
@@ -348,3 +350,5 @@ char* search_char(hash_table* table,char* value,char* key)
 	}
 	return NULL;
 }
+
+#endif
