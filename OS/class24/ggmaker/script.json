@@ -1,0 +1,94 @@
+{
+    "title": "夕立ちのあとで",
+    "start": {
+        "description": "放課後。\n前を歩くお団子ヘアの彼女が、またコンビニに入った。\nあなたも後を追った。",
+        "image": "img/start.jpg",
+        "1": {
+            "description": "飲料コーナーへ",
+            "next": "fridge"
+        },
+        "2": {
+            "description": "お菓子コーナーへ",
+            "next": "snacks"
+        }
+    },
+    "fridge": {
+        "description": "彼女が冷蔵ケースの前で苺ヨーグルトを手に取って、戻して。\nまた手に取って。\n隣に「半額」のシールが光っている。",
+        "image": "img/fridge.jpg",
+        "1": {
+            "description": "「美味しい？」",
+            "next": "ask_milk"
+        },
+        "2": {
+            "description": "アイスを二本渡す",
+            "next": "snack_share"
+        },
+        "3": {
+            "description": "まだ見て回る",
+            "next": "snacks"
+        }
+    },
+    "snacks": {
+        "description": "スナック棚越しに彼女を見る。\n彼女もこちらに気づいた。",
+        "image": "img/snacks.jpg",
+        "1": {
+            "description": "塩ポテトを渡す",
+            "next": "snack_share"
+        },
+        "2": {
+            "description": "スマホを見るフリ",
+            "next": "end_alone"
+        },
+        "3": {
+            "description": "やっぱり飲み物を見に行く",
+            "next": "fridge"
+        }
+    },
+    "ask_milk": {
+        "description": "「美味しい？」\n彼女が一本渡してくれた。\n「尝てみて。」\n甘かった。",
+        "image": "img/ask_milk.jpg",
+        "1": {
+            "description": "「また明日も来よう」",
+            "next": "end_daily"
+        },
+        "2": {
+            "description": "笑って受け取る",
+            "next": "end_sunshine"
+        },
+        "3": {
+            "description": "もう少し買い物する",
+            "next": "fridge"
+        }
+    },
+    "snack_share": {
+        "description": "外の芝生に座った。\nお菓子は開けないまま、たくさん話した。\n空がオレンジから紫に変わった。",
+        "image": "img/snack_share.jpg",
+        "1": {
+            "description": "「明日もここに座る？」",
+            "next": "end_daily"
+        },
+        "2": {
+            "description": "暗くなった、帰ろう",
+            "next": "end_sunshine"
+        },
+        "3": {
+            "description": "水を買いに戻る",
+            "next": "start"
+        }
+    },
+    "end_sunshine": {
+        "description": "帰って日記を開いた。\n二行書いて、ずっと笑った。\n春が早く来たみたい。",
+        "image": "img/end_sunshine.jpg",
+        "endTitle": "エンディング A — 苺ミルク"
+    },
+    "end_daily": {
+        "description": "毎日放課後、同じ道、同じコンビニ。\n「半額」のシールは変わっても。\n二人の習慣は変わらない。",
+        "image": "img/end_daily.jpg",
+        "endTitle": "エンディング B — コンビニのチャイム"
+    },
+    "end_alone": {
+        "description": "彼女はもういない。\nあのコンビニには二度と入らなかった。\n割引は一度きり。",
+        "image": "img/end_alone.jpg",
+        "endTitle": "エンディング C — 半額のアイス"
+    }
+}

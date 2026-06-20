@@ -9,7 +9,7 @@ void exchange(int*a,int*b)
     *a=*b;
     *b=temp;
 }
-void fast_order(int*ptr,int left ,int right )
+void fast_sort(int*ptr,int left ,int right )
 {
     if (left >= right) return;
     int length=right-left;
@@ -38,8 +38,8 @@ void fast_order(int*ptr,int left ,int right )
             exchange(&ptr[i],&ptr[tail--]);
          }
     }
-    fast_order(ptr,left,l);
-    fast_order(ptr,tail+1,right);
+    fast_sort(ptr,left,l);
+    fast_sort(ptr,tail+1,right);
 }
  
 
@@ -56,7 +56,7 @@ void main()
     {
         scanf("%d",&ptr[i]);
     }
-    fast_order(ptr,0,n-1);
+    fast_sort(ptr,0,n-1);
     for(int i=0;i<n;i++)printf("%d\t",ptr[i]);
     free(ptr);
 }
